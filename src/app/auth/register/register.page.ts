@@ -49,6 +49,7 @@ export class RegisterPage implements OnInit {
     this.rememberMe = false;
     this.acceptTerms = false;
     this.country = await this.countryService.geocodeLocation();
+    
   }
 
   openCountriesModal() {
@@ -78,6 +79,7 @@ export class RegisterPage implements OnInit {
 
   registerButtonClicked() {
     if (this.fullName === '') {
+      console.log(this.country)
       this.utils.showToast('Your full name is required').then(async () => {
         await this.inputFullName.setFocus();
       });

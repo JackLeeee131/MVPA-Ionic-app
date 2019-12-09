@@ -186,9 +186,9 @@
         -moz-border-radius: 50%;
         border-radius: 50%;
         top: 15px;
-        background: #10D9B3 url("../../assets/images/icon_coaching.png") no-repeat center center;
+        background: url("../../assets/images/icon_coaching.png") no-repeat center center;
         background-size: 30px;
-        filter: invert(0);
+        // filter: invert(0);
       }
     }
 

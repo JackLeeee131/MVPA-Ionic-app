@@ -1,6 +1,10 @@
 <ion-content>
     <div class="page-container has-header" (scroll)="checkScroll($event)">
+        
         <ion-card class="video-container" *ngIf="lastVideo != null">
+            <ion-card-title style="font-size: 20px; font-weight: inherit;" class="ion-text-center">
+                THIS WEEK'S LESSON
+            </ion-card-title>
             <img [src]="lastVideo.thumbnail_link" alt="Video Thumbnail"/>
             <ion-card-header class="ion-padding">
                 <ion-row>
@@ -23,6 +27,10 @@
         </ion-card>
 
         <ion-card class="surveys-card surveys-wellness gradient-green to-left dark">
+            <ion-card-title style="font-size: 20px; font-weight: inherit;" class="ion-text-center">
+                    <!-- {{language.getWordByLanguage('getWellingScore')}} -->
+                    GET YOUR WELLBEING SCORE
+            </ion-card-title>
             <ion-card-content class="card-container">
                 <ion-card color="light" (click)="navigateToSurvey()">
                     <img class="icon-image" src="../../../assets/images/heartbeat.png" alt=""/>
@@ -35,31 +43,46 @@
             </ion-card-content>
         </ion-card>
 
-        <ion-card class="gradient-green to-left dark">
-            <div class="card-image-title ion-text-center text-uppercase">
-                {{language.getWordByLanguage('breatheIn')}}
-            </div>
-            <div class="gradient-underline gradient-white"></div>
-            <ion-card-header class="no-padding">
-                <ion-row class="ion-padding">
-                    <ion-col size="8">
-                        <ion-card-title class="font-poppins color-white">
-                            {{language.getWordByLanguage('breathingExercise')}}
-                        </ion-card-title>
-                        <ion-card-subtitle class="color-white" style="margin-top: 5px;">
-                            with Lynn
-                        </ion-card-subtitle>
-                    </ion-col>
-                    <ion-col size="4">
-                        <ion-button class="white-green-button" type="button" expand="block" color="primary" style="height: 40px;font-size: 10px;" (click)="navigateToTools()">
-                            {{language.getWordByLanguage('play')}}
-                        </ion-button>
-                    </ion-col>
-                </ion-row>
-            </ion-card-header>
-        </ion-card>
+        <!-- <ion-grid >
+            <ion-card class="gradient-green to-left dark">
+                <ion-card-title class="ion-text-center">
+                    TALK TO A COACH
+                </ion-card-title>
+            </ion-card> -->
+            
+            <ion-card class="gradient-green to-left dark">
+                <ion-card-title style="font-size: 20px; font-weight: inherit;" class="ion-text-center">
+                        TAKE A BREATH
+                </ion-card-title>
+                <div class="card-image-title ion-text-center text-uppercase">
+                    {{language.getWordByLanguage('breatheIn')}}
+                </div>
+                <div class="gradient-underline gradient-white"></div>
+                <ion-card-header class="no-padding">
+                    <ion-row class="ion-padding">
+                        <ion-col size="8">
+                            <ion-card-title class="font-poppins color-white">
+                                {{language.getWordByLanguage('breathingExercise')}}
+                            </ion-card-title>
+                            <ion-card-subtitle class="color-white" style="margin-top: 5px;">
+                                with Lynn
+                            </ion-card-subtitle>
+                        </ion-col>
+                        <ion-col size="4">
+                            <ion-button class="white-green-button" type="button" expand="block" color="primary" style="height: 40px;font-size: 10px;" (click)="navigateToTools()">
+                                {{language.getWordByLanguage('play')}}
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-card-header>
+            </ion-card>
+        <!-- </ion-grid> -->
+        
 
-        <ion-card class="coach-container gradient-green to-top dark ion-padding" *ngIf="upcomingSession.id">
+        <ion-card class="coach-container gradient-green to-top dark ion-padding" style="padding-top: 3px;" *ngIf="upcomingSession.id">
+            <ion-card-title style="font-size: 20px; font-weight: inherit;" class="ion-text-center">
+                    BOOK YOUR NEXT SESSION WITH A COACH
+            </ion-card-title>
             <div class="card-top-bar">
                 <img class="avatar-image"
                      [src]="upcomingSession.coach_user_photo ? upcomingSession.coach_user_photo : '../../../assets/images/icon_user_avatar.png'"

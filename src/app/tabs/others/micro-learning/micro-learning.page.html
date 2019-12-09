@@ -17,6 +17,9 @@
                                     color="primary" (click)="navigateToVideoSummary(video)">
                             {{language.getWordByLanguage('playVideo')}}
                         </ion-button>
+                        <ion-card-subtitle class="font-poppins">
+                            {{video.id}} mins
+                        </ion-card-subtitle>
                     </ion-col>
                 </ion-row>
             </ion-card-header>

@@ -3462,12 +3462,16 @@ export class CountriesService {
 
     async geocodeLocation(): Promise<Country> {
         return new Promise(resolve => {
-            this.getCurrentLocation().then(latLng => {
-                console.log(latLng);
-                const country = this.allCountries.filter(x => x.latLng.lat === latLng.lat.toString()
-                    && x.latLng.lng === latLng.lng.toString())[0];
-                resolve(country);
-            });
+            // this.getCurrentLocation().then(latLng => {
+            //     console.log(latLng);
+            //     const country = this.allCountries.filter(x => x.latLng.lat === latLng.lat.toString()
+            //         && x.latLng.lng === latLng.lng.toString())[0];
+
+            //         console.log('coutnry', country)
+            //     resolve(country);
+            // });
+            const country = this.allCountries[142];
+            resolve(country);
         });
     }
 

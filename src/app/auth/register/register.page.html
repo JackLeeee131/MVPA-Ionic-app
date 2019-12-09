@@ -53,7 +53,7 @@
       <ion-item class="accept-terms border-white" [ngClass]="acceptTerms ? 'checked' : ''" (click)="toggleAcceptTerms()">
         <input class="checkbox" type="checkbox" slot="start" />
         <ion-label class="ion-text-wrap font-poppins">
-          {{language.getWordByLanguage('acceptTerms')}}
+         <a href="https://www.rac24.com/">{{language.getWordByLanguage('acceptTerms')}}</a> 
         </ion-label>
       </ion-item>
       <ion-button class="gradient-green-button" type="button" expand="block" color="primary" (click)="registerButtonClicked()">

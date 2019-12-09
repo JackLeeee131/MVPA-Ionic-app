@@ -37,6 +37,8 @@ export class MicroLearningPage {
     this.utils.showLoading().then(loading => {
       this.http.get(environment.videoApi + 'list_video').subscribe((response: any) => {
         this.videos = response.data;
+        console.log('video data', response.data)
+        console.log('status', response.status)
         loading.dismiss();
       });
     });
