@@ -1,6 +1,6 @@
 {
-  "appId": "com.example.mvpa",
-  "appName": "MVPA",
+  "appId": "com.example.app",
+  "appName": "MYAPP",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

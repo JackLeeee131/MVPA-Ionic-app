@@ -47,7 +47,7 @@
                     <h5 class="no-margin has-carrot carrot-gray">{{language.getWordByLanguage('whenSessionTitle')}}</h5>
                 </ion-card-title>
             </ion-card-header>
-            <ion-card-content [innerHTML]="language.getWordByLanguage('whenSessionDescription')">
+            <ion-card-content class="card-user-description ion-text-left" [innerHTML]="language.getWordByLanguage('whenSessionDescription')">
             </ion-card-content>
         </ion-card>
 
@@ -57,7 +57,7 @@
                     <h5 class="no-margin has-carrot carrot-gray">Who will be helping me?</h5>
                 </ion-card-title>
             </ion-card-header>
-            <ion-card-content>
+            <ion-card-content class="card-user-description ion-text-left">
                 All OminumPro counselors are licensed, accredited professionals. We will match you to an available counselor who fits your objectives, preferences, and the type of issues you are dealing with.
                 <br><br>
                 We have found that we are able to provide a successful match most of the time; however, if you start the process and you feel your counselor isn't a good fit for you, you may elect to be matched to a different professional.
@@ -70,7 +70,7 @@
                     <h5 class="no-margin has-carrot carrot-gray">Are coaching calls and therapy confidential?</h5>
                 </ion-card-title>
             </ion-card-header>
-            <ion-card-content>
+            <ion-card-content class="card-user-description ion-text-left">
                 All coaching calls and therapy sessions are 100% confidential.
                 Our coaches and therapists are bound to the same confidentiality and ethics codes as private clinicians. Your coach or therapist might bring an issue back to the OminumPro senior clinical psychologist or supervision team for support.
                 <br><br>
@@ -84,7 +84,7 @@
                     <h5 class="no-margin has-carrot carrot-gray">How long is a session?</h5>
                 </ion-card-title>
             </ion-card-header>
-            <ion-card-content>
+            <ion-card-content class="card-user-description ion-text-left">
                 Coaching Sessions are 30 minutes while therapy sessions last 60 minutes.
                 You can book a call in working hours or after hours.
             </ion-card-content>
@@ -96,7 +96,7 @@
                     <h5 class="no-margin has-carrot carrot-gray">{{language.getWordByLanguage('howWorkTitle')}}</h5>
                 </ion-card-title>
             </ion-card-header>
-            <ion-card-content>
+            <ion-card-content class="card-user-description ion-text-left">
 <!--                <app-timeline [data]="timelineData" [titleUpper]="true"></app-timeline>-->
                 <ol>
                     <li *ngFor="let timeline of timelineData">{{timeline}}</li>
@@ -110,7 +110,7 @@
                     <h5 class="no-margin has-carrot carrot-gray">Cancelling/rescheduling a call</h5>
                 </ion-card-title>
             </ion-card-header>
-            <ion-card-content>
+            <ion-card-content class="card-user-description ion-text-left">
                 All cancellations and reschedules are completed within OminumPro App.
                 You cannot change your calls any other way, including via Outlook/Google Calendar.
                 <br><br>

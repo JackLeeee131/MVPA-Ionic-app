@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MainPage } from './main.page';
 import {IonicRatingModule} from 'ionic-rating';
+import {NgCircleProgressModule} from 'ng-circle-progress';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         RouterModule.forChild(routes),
+        NgCircleProgressModule,
         IonicRatingModule
     ],
   declarations: [MainPage]

@@ -64,4 +64,8 @@ export class TabsPage implements OnInit, OnDestroy {
         this.events.publish('toggle-side-menu');
     }
 
+    navigateToBack(){
+        this.navController.back();
+        console.log('here')
+    }
 }

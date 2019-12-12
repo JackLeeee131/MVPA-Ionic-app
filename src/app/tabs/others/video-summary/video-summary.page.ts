@@ -16,6 +16,7 @@ export class VideoSummaryPage {
     title_in_english: '',
     description_in_french: '',
     description_in_english: '',
+    duration:'',
     thumbnail_link: '',
     file_link: ''
   };

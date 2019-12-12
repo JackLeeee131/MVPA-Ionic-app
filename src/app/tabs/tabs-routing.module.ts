@@ -44,6 +44,12 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'coaching-question',
+        loadChildren: () => import('../pages/coaching-question/coaching-question.module').then(m => m.CoachingQuestionPageModule),
+        canActivate: [AuthService]
+      },
+
+      {
         path: 'micro-learning',
         children: [
           {

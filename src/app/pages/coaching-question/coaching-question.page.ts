@@ -88,6 +88,7 @@ export class CoachingQuestionPage {
                 this.questions = [];
                 this.answers = [];
                 const data = response.data;
+                console.log('default data', data)
                 const questions = data.filter(x => x.question_id === null) as CoachingQuestion[];
                 for (const question of questions) {
                     const answers = data.filter(x => x.question_id === question.id) as CoachingQuestion[];

@@ -409,7 +409,8 @@ export class CoachingPage {
     // }
 
     requestCoachingSession() {
-        this.utils.showConfirm('Do you want to request coach session by the date you selected?', '', () => {
+        this.utils.showConfirm('Your coach will call you via Zoom call. In the meantime, if you need to cancel or reschedule your appointment, please know that all cancellations and reschedules are completed within OminumPro App. For both cancellations and reschedules, we require a minimum of 24 hours notice', '', 
+        () => {
             this.utils.showLoading().then(loading => {
                 const deviceInfo = JSON.parse(localStorage.getItem('deviceInfo'));
                 const sessionDate = this.calendar.year + '-' + this.calendar.month + '-' + this.selectedDay.day + ' ' +
@@ -422,15 +423,16 @@ export class CoachingPage {
                     loading.dismiss().then(() => {
                         this.toggleCalendarShow();
                         localStorage.setItem('requested-coaching', response.session);
-                        this.events.publish('navigate-forward-url', 'prepare-coaching');
+                        // this.events.publish('navigate-forward-url', 'prepare-coaching');
+                        this.events.publish('navigate-forward-url', 'coaching-question');
                     });
-                });
+                }); 
             });
         }).then(() => {});
     }
 
     cancelCoachingSession(session: CoachingSession) {
-        this.utils.showConfirm('Do you want to cancel a coach session you selected?', '', () => {
+        this.utils.showConfirmCancel('Are you sure you want to cancel the coach session you selected?', '', () => {
             this.http.post(environment.coachingApi + 'cancel_session', {
                 session_id: session.id
             }).subscribe(() => {

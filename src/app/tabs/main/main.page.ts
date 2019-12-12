@@ -6,6 +6,8 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {UtilsService} from '../../../services/utils/utils.service';
 import {CoachingReview, CoachingSession, Video} from '../../../interface/interface';
+import { promise } from 'protractor';
+import { resolve } from 'url';
 
 @Component({
     selector: 'app-main',
@@ -13,6 +15,8 @@ import {CoachingReview, CoachingSession, Video} from '../../../interface/interfa
     styleUrls: ['./main.page.scss'],
 })
 export class MainPage {
+
+    lastScore: any;
 
     slidesOpts = {
         slidesPerView: 1,
@@ -137,6 +141,12 @@ export class MainPage {
     ionViewWillEnter() {
         this.ui.pageContainerScrollToTop(document.getElementsByClassName('page-container')[0] as HTMLDivElement);
         this.getLastVideo();
+        this.lastScore = 0;
+        this.utils.showLoading().then(loading=>{
+            this.getServeyScores().then(() => {
+                loading.dismiss();
+            })
+        })
     }
 
     getLastVideo() {
@@ -203,6 +213,21 @@ export class MainPage {
 
     navigateToCoaching() {
         this.events.publish('navigate-forward-url', 'coaching');
+    }
+
+    async getServeyScores(): Promise<any> {
+        return new Promise(resolve =>{
+            const deviceInfo = JSON.parse(localStorage.getItem('deviceInfo'));
+            this.http.get(environment.surveyApi + 'last_score', {
+                params: {...deviceInfo, type: 0}
+            }).subscribe((lastScore: any) => {
+                this.lastScore = Number(lastScore.score);
+                    resolve({
+                        lastScore: this.lastScore,
+                    });
+                });
+            });
+        
     }
 
 }

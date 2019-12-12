@@ -14,6 +14,10 @@ export interface DeviceInfo {
     isVirtual?: boolean;
 }
 
+export interface VideoLink {
+    linkname?: string[];
+}
+
 export interface LoadingControllerOption {
     type?: number;
     position?: string;
@@ -57,6 +61,7 @@ export interface Video {
     title_in_english?: string;
     description_in_french?: string;
     description_in_english?: string;
+    duration: string;
     category_id?: number;
     thumbnail_link?: string;
     file_link?: string;

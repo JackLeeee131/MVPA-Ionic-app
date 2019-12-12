@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import { Media } from '@ionic-native/media/ngx';
 
 import { MicroLearningPage } from './micro-learning.page';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
+  providers: [Media],
   declarations: [MicroLearningPage]
 })
-export class MicroLearningPageModule {}
+export class MicroLearningPageModule { }

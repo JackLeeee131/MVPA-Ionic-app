@@ -1,10 +1,10 @@
 <ion-content>
     <div class="page-container has-header" (scroll)="checkScroll($event)">
         
-        <ion-card class="video-container" *ngIf="lastVideo != null">
-            <ion-card-title style="font-size: 20px; font-weight: inherit;" class="ion-text-center">
+        <ion-card class="video-container " *ngIf="lastVideo != null">
+            <h5 class="ion-text-center gradient-green dark color-white" style="margin: 0px; height: 30px;">
                 THIS WEEK'S LESSON
-            </ion-card-title>
+            </h5>
             <img [src]="lastVideo.thumbnail_link" alt="Video Thumbnail"/>
             <ion-card-header class="ion-padding">
                 <ion-row>
@@ -27,13 +27,33 @@
         </ion-card>
 
         <ion-card class="surveys-card surveys-wellness gradient-green to-left dark">
-            <ion-card-title style="font-size: 20px; font-weight: inherit;" class="ion-text-center">
+            <h5 class="ion-text-center color-white">
                     <!-- {{language.getWordByLanguage('getWellingScore')}} -->
                     GET YOUR WELLBEING SCORE
-            </ion-card-title>
+            </h5>
             <ion-card-content class="card-container">
                 <ion-card color="light" (click)="navigateToSurvey()">
-                    <img class="icon-image" src="../../../assets/images/heartbeat.png" alt=""/>
+                    <!-- <img class="icon-image" src="../../../assets/images/heartbeat.png" alt=""/> -->
+                    <ion-row class="ion-text-center" style="display: block;">
+                        <circle-progress
+                            [percent]="lastScore"
+                            [radius]="35"
+                            [titleColor]="'#10D9B3'"
+                            [titleFontSize]="'12'"
+                            [outerStrokeWidth]="5"
+                            [innerStrokeWidth]="5"
+                            [outerStrokeColor]="'#10D9B3'"
+                            [innerStrokeColor]="'#E7E6E6'"
+                            [animation]="true"
+                            [animationDuration]="500"
+                            [showSubtitle]="false"
+                        >
+                        </circle-progress>
+                        <br>
+                        <ion-label class="color-green" style="font-size: 12px !important;">
+                            {{language.getWordByLanguage('lastChecked')}}
+                        </ion-label>
+                    </ion-row>
                     <ion-card-header class="ion-padding">
                         <ion-card-title class="ion-text-center">
                             {{language.getWordByLanguage('wellnessCheck')}}
@@ -51,9 +71,9 @@
             </ion-card> -->
             
             <ion-card class="gradient-green to-left dark">
-                <ion-card-title style="font-size: 20px; font-weight: inherit;" class="ion-text-center">
+                <h5 class="ion-text-center color-white">
                         TAKE A BREATH
-                </ion-card-title>
+                </h5>
                 <div class="card-image-title ion-text-center text-uppercase">
                     {{language.getWordByLanguage('breatheIn')}}
                 </div>
@@ -80,9 +100,9 @@
         
 
         <ion-card class="coach-container gradient-green to-top dark ion-padding" style="padding-top: 3px;" *ngIf="upcomingSession.id">
-            <ion-card-title style="font-size: 20px; font-weight: inherit;" class="ion-text-center">
+            <h5 class="ion-text-center color-white">
                     BOOK YOUR NEXT SESSION WITH A COACH
-            </ion-card-title>
+            </h5>
             <div class="card-top-bar">
                 <img class="avatar-image"
                      [src]="upcomingSession.coach_user_photo ? upcomingSession.coach_user_photo : '../../../assets/images/icon_user_avatar.png'"

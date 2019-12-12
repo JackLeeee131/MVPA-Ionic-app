@@ -51,9 +51,10 @@ export class LanguageService {
             faq: 'Aide et assistance',
             overview: 'Vue d\'ensemble',
             wellbeingScore: 'Ton score bien être',
+            stressScore: 'Ton score le stress',
             lastScore: 'Dernier score',
-            prevMonthScore: 'p/r au mois précédent',
-            firstScore: 'p/r au premier score',
+            prevMonthScore: 'score précédent',
+            firstScore: 'premier score',
             coachSessions: 'Sessions avec coach',
             toolUsed: 'Outils testés',
             submit: 'Envoyer',
@@ -68,7 +69,8 @@ export class LanguageService {
             main: 'Accueil',
             surveys: 'Enquêtes',
             coaching: 'Coaching',
-            'micro-learning': 'Micro Learning',
+            'micro-learning': 'Micro Learning completed',
+            'micro-tab': 'Micro Learning',
             tools: 'Outils',
             profile: 'Profil',
             'video-summary': 'Vidéo',
@@ -110,7 +112,8 @@ export class LanguageService {
             balanceBreathing: 'Balance<br>Breathing',
             relaxBreathing: 'Relaxing<br>Breathing',
             fallBreathing: 'Falling asleep<br>Breathing',
-            energyBreathing: 'Energizing<br>Breathing'
+            energyBreathing: 'Energizing<br>Breathing',
+            lastChecked: 'Last Checked'
         },
         english: {
             lang: 'Choose your language',
@@ -144,10 +147,11 @@ export class LanguageService {
             faq: 'Faq',
             overview: 'Overview',
             wellbeingScore: 'Your Wellbeing Score',
-            lastScore: 'Last Score',
-            prevMonthScore: 'p/r in Previous Month',
-            firstScore: 'p/r First Score',
-            coachSessions: 'Coaching Sessions',
+            stressScore:'Your Stress Score',
+            lastScore: 'Last Score (Date)',
+            prevMonthScore: 'Previous Score (Date)',
+            firstScore: 'First Score (Date)',
+            coachSessions: 'Sessions completed',
             toolUsed: 'Tool Used',
             submit: 'Submit',
             registerHere: 'Create account',
@@ -161,7 +165,8 @@ export class LanguageService {
             main: 'Home',
             surveys: 'Surveys',
             coaching: 'Coaching',
-            'micro-learning': 'Micro Learning',
+            'micro-learning': 'Micro Learning completed',
+            'micro-tab': 'Micro Learning',
             tools: 'Tools',
             profile: 'Profile',
             'video-summary': 'Video',
@@ -203,7 +208,8 @@ export class LanguageService {
             balanceBreathing: 'Balance<br>Breathing',
             relaxBreathing: 'Relaxing<br>Breathing',
             fallBreathing: 'Falling asleep<br>Breathing',
-            energyBreathing: 'Energizing<br>Breathing'
+            energyBreathing: 'Energizing<br>Breathing',
+            lastChecked: 'Last Checked'
         }
     };
 

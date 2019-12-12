@@ -88,6 +88,7 @@ export class SurveyScorePage implements OnInit {
     ]
   };
 
+  title = 'wellbeingScore';
   percent: number;
   description: string;
 
@@ -112,6 +113,7 @@ export class SurveyScorePage implements OnInit {
         this.description = this.descriptions[this.language.getCurrentLanguage()][type].more80;
       }
     } else {
+      this.title='stressScore';
       if (this.percent <= 30) {
         this.description = this.descriptions[this.language.getCurrentLanguage()][type].less30;
       } else if (this.percent > 30 && this.percent < 70) {

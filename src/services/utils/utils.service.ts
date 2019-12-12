@@ -87,6 +87,8 @@ export class UtilsService {
         await this.showAlert(message, title, 1, callback);
     }
 
+    
+
     async showAlert(msg?: string, title?: string, type?: number, callback?: any): Promise<void> {
         if (title === '') {
             if (type === 0) {
@@ -120,7 +122,7 @@ export class UtilsService {
                         }
                     }
                 }, {
-                    text: 'Cancel',
+                    text: 'Cancel your appointment',
                     role: 'cancel',
                     cssClass: 'secondary',
                     handler: () => {
@@ -130,7 +132,62 @@ export class UtilsService {
         }
 
         const options = {
-            header: title,
+            header: 'Your appointment is confrimed for',
+            message: msg,
+            buttons: buttonsArray
+        };
+        const alert = await this.alertController.create(options);
+        await alert.present();
+    }
+
+    async showConfirmCancel(message?: string, title?: string, callback?: any) {
+        await this.showAlertCancel(message, title, 1, callback);
+    }
+
+    async showAlertCancel(msg?: string, title?: string, type?: number, callback?: any): Promise<void> {
+        if (title === '') {
+            if (type === 0) {
+                title = 'Alert';
+            } else {
+                title = 'Confirm';
+            }
+        }
+
+        let buttonsArray = [
+            {
+                text: 'YES',
+                role: '',
+                cssClass: '',
+                handler: () => {
+                    if (typeof callback === 'function') {
+                        callback();
+                    }
+                }
+            }
+        ];
+        if (type === 1) {
+            buttonsArray = [
+                {
+                    text: 'YES',
+                    role: '',
+                    cssClass: '',
+                    handler: () => {
+                        if (typeof callback === 'function') {
+                            callback();
+                        }
+                    }
+                }, {
+                    text: 'NO',
+                    role: 'cancel',
+                    cssClass: 'secondary',
+                    handler: () => {
+                    }
+                }
+            ];
+        }
+
+        const options = {
+            // header: msg,
             message: msg,
             buttons: buttonsArray
         };
